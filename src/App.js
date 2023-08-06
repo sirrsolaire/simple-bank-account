@@ -41,54 +41,36 @@ function reducer(state, action) {
           state.balance > 0 ? state.balance - state.withdraw : state.balance,
       };
     case "requestLoan":
-      if (state.loan === 0) {
+      if (state.loan === 0)
         return {
           ...state,
           balance: state.balance + state.requestLoan,
           loan: state.loan + state.requestLoan,
         };
-      } else {
-        alert("You can only get one loan before you pay off your debt.");
-        return state;
-      }
-    // return {
-    //   ...state,
-    //   balance:
-    //     state.loan === 0 ? state.balance + state.requestLoan : state.balance,
-    //   loan: state.loan === 0 ? state.loan + state.requestLoan : state.loan,
-    // };
+      alert("You can only get one loan before you pay off your debt.");
+      return state;
+
     case "payLoan":
-      if (state.balance >= state.loan) {
+      if (state.balance >= state.loan)
         return {
           ...state,
+          loan: 0,
           balance: state.balance - state.loan,
-          loan: state.loan - state.loan,
         };
-      } else {
-        alert("Not Enough Balance");
-        return state; // If the balance is not enough, we return the current state without any changes.
-      }
+      alert("Not Enough Balance");
+      return state;
 
     case "active":
       return {
         ...state,
         isActive: action.payload,
-        balance: state.balance + 500,
+        balance: 500,
       };
     case "close":
-      if (state.loan === 0 && state.balance === 0) {
-        return { ...state, isActive: action.payLoad };
-      } else {
-        alert("Balance and loan must be 0");
-        return state;
-      }
-    // return {
-    //   ...state,
-    //   isActive:
-    //     state.loan === 0 && state.balance === 0
-    //       ? action.payLoad
-    //       : state.isActive,
-    // };
+      if (state.loan === 0 && state.balance === 0) return initialState;
+      alert("Balance and loan must be 0");
+      return state;
+
     default:
       throw new Error("Unknown");
   }
