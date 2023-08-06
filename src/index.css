@@ -1,13 +1,97 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: bisque;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+}
+
+header {
+  text-align: center;
+  background-color: #ff4742;
+  font-size: 70px;
+  padding: 10px;
+  color: #ffffff;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 2rem;
+  color: #ffffff;
+}
+
+.loan {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 16px;
+  background-color: #ff4742;
+  padding: 20px;
+  border-radius: 9px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 10rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+  gap: 0.6rem;
+}
+
+button {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 20px 2px 20px 2px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 180px;
+}
+
+button:hover,
+button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff4742;
+}
+
+button:active {
+  opacity: 0.5;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
 }
